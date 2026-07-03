@@ -20,8 +20,8 @@ export default function LandingPage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none z-0"
         >
-          {/* Reliable Mixkit CDN video of a crowd with phones */}
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-party-crowd-with-glowing-smartphones-43285-large.mp4" type="video/mp4" />
+          {/* This now points directly to the background.mp4 file in your public folder */}
+          <source src="/background.mp4" type="video/mp4" />
         </video>
 
         {/* Deep Purple Glass Overlay (Z-10) to ensure text is always readable */}
