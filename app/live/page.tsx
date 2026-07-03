@@ -260,14 +260,13 @@ function LiveLayoutContent() {
       recognition.onstart = () => console.log("🟢 MICROPHONE ACTIVE: Continuous listening running (hi-IN)...");
 
       recognition.onresult = (event: any) => {
-        const currentResultIndex = event.resultIndex;
-        const SpeechResult = event.results[currentResultIndex]?.[0];
-        
-        if (SpeechResult && event.results[currentResultIndex].isFinal) {
-          const textChunk = SpeechResult.transcript.trim();
-          if (textChunk.length > 0) {
-            console.log(`🚀 CONTINUOUS BATCH TO AI: "${textChunk}"`);
-            triggerGeminiAIResponse(textChunk);
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) {
+            const textChunk = event.results[i][0].transcript.trim();
+            if (textChunk.length > 0) {
+              console.log(`🚀 CONTINUOUS BATCH TO AI: "${textChunk}"`);
+              triggerGeminiAIResponse(textChunk);
+            }
           }
         }
       };
