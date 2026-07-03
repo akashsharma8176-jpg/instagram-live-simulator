@@ -240,7 +240,14 @@ function LiveLayoutContent() {
 
     async function startCamera() {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+        // THE FIX: Set audio to TRUE. 
+        // This forces the browser to hold the hardware mic open permanently.
+        // When Chrome's Speech API inevitably restarts, Android won't play the "tding" 
+        // sound because the microphone hardware never actually turned off!
+        const stream = await navigator.mediaDevices.getUserMedia({ 
+          video: { facingMode: 'user' }, 
+          audio: true 
+        });
         if (videoRef.current) videoRef.current.srcObject = stream;
       } catch (err) {
         console.error("Camera access blocked:", err);
