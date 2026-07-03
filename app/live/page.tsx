@@ -235,15 +235,11 @@ function LiveLayoutContent() {
   // ==========================================
   // ENGINE 3: CONTINUOUS UNBROKEN SPEECH LISTENER
   // ==========================================
-  // ==========================================
-  // ENGINE 3: CONTINUOUS UNBROKEN SPEECH LISTENER
-  // ==========================================
   useEffect(() => {
     let isMicActive = true;
 
     async function startCamera() {
       try {
-        // FIXED: Reverted to audio: false so the camera doesn't lock the Speech API out.
         const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
         if (videoRef.current) videoRef.current.srcObject = stream;
       } catch (err) {
@@ -317,9 +313,9 @@ function LiveLayoutContent() {
 
       <div className="absolute inset-0 z-10 flex flex-col justify-between pointer-events-none">
         
-        {/* FULLSCREEN PROMPT OVERLAY */}
+        {/* FULLSCREEN PROMPT OVERLAY WITH NEW DISCLAIMER */}
         {!isFullscreen && (
-          <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm pointer-events-auto">
+          <div className="absolute inset-0 z-50 flex flex-col gap-5 items-center justify-center bg-black/40 backdrop-blur-sm pointer-events-auto">
             <button 
               onClick={handleFullscreen}
               className="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-8 rounded-full border border-white/30 backdrop-blur-md shadow-2xl transition-all transform hover:scale-105 flex items-center gap-2"
@@ -327,6 +323,9 @@ function LiveLayoutContent() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" /></svg>
               Enter Full Screen
             </button>
+            <p className="text-white/70 text-xs sm:text-sm font-medium animate-pulse tracking-wide drop-shadow-md text-center px-6">
+              💡 Pro tip: Mute your phone's media volume to silence those annoying mic chimes!
+            </p>
           </div>
         )}
 
