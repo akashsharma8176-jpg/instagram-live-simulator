@@ -46,9 +46,6 @@ function LiveLayoutContent() {
   const lastFillerRef = useRef("");
   const faceIndexRef = useRef({ male: 0, female: 0 }); 
   
-  const speechBufferRef = useRef("");
-  const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-
   const streamerName = searchParams.get('name') || 'sky';
   const isVerified = searchParams.get('verified') === 'true'; 
   const isDonationsOn = searchParams.get('donations') === 'true'; 
@@ -75,7 +72,6 @@ function LiveLayoutContent() {
   // STREAM BOOT & LOCAL STORAGE CAPTURE
   // ==========================================
   useEffect(() => {
-    // Safely look up if a custom profile logo was uploaded on the front page
     const storedAvatar = localStorage.getItem('streamerAvatar');
     if (storedAvatar) {
       setStreamerAvatar(storedAvatar);
@@ -237,7 +233,7 @@ function LiveLayoutContent() {
   }
 
   // ==========================================
-  // ENGINE 3: SMART BATCHING SPEECH LISTENER
+  // ENGINE 3: CONTINUOUS UNBROKEN SPEECH LISTENER
   // ==========================================
   useEffect(() => {
     let isMicActive = true;
@@ -261,31 +257,17 @@ function LiveLayoutContent() {
       recognition.interimResults = false; 
       recognition.lang = 'hi-IN'; 
 
-      recognition.onstart = () => console.log("🟢 MICROPHONE ACTIVE: Listening in (Hinglish)...");
+      recognition.onstart = () => console.log("🟢 MICROPHONE ACTIVE: Continuous listening running (hi-IN)...");
 
       recognition.onresult = (event: any) => {
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            const finalPhrase = event.results[i][0].transcript;
-            if (finalPhrase.trim().length > 0) {
-              
-              speechBufferRef.current += " " + finalPhrase.trim();
-              console.log(`🗣️ YOU SAID: "${finalPhrase.trim()}"`);
-
-              if (speechTimeoutRef.current) {
-                clearTimeout(speechTimeoutRef.current);
-              }
-
-              speechTimeoutRef.current = setTimeout(() => {
-                const completeSentence = speechBufferRef.current.trim();
-                if (completeSentence) {
-                  console.log(`🚀 BATCHED TO AI: "${completeSentence}"`);
-                  triggerGeminiAIResponse(completeSentence);
-                  speechBufferRef.current = ""; 
-                }
-              }, 3500); 
-
-            }
+        const currentResultIndex = event.resultIndex;
+        const SpeechResult = event.results[currentResultIndex]?.[0];
+        
+        if (SpeechResult && event.results[currentResultIndex].isFinal) {
+          const textChunk = SpeechResult.transcript.trim();
+          if (textChunk.length > 0) {
+            console.log(`🚀 CONTINUOUS BATCH TO AI: "${textChunk}"`);
+            triggerGeminiAIResponse(textChunk);
           }
         }
       };
@@ -300,15 +282,11 @@ function LiveLayoutContent() {
         if (!isMicActive) return; 
         setTimeout(() => {
           try { recognition.start(); } catch (e) {}
-        }, 1000); 
+        }, 300); 
       };
 
       recognitionRef.current = recognition;
-      setTimeout(() => {
-        if (isMicActive) {
-          try { recognition.start(); } catch (e) {}
-        }
-      }, 1000);
+      try { recognition.start(); } catch (e) {}
     }
 
     return () => {
@@ -349,12 +327,10 @@ function LiveLayoutContent() {
           </div>
         )}
 
-        {/* TOP HUD (Carrier Info/Clock Row Completely Deleted) */}
+        {/* TOP HUD */}
         <div className="w-full bg-gradient-to-b from-black/70 via-black/30 to-transparent pt-6 pb-12 px-4 flex flex-col justify-start">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 pointer-events-auto">
-              
-              {/* DYNAMIC AVATAR: Reflects your front-page uploaded logo directly */}
               <div className="w-8 h-8 rounded-full border border-white/20 overflow-hidden shadow shrink-0 bg-gradient-to-tr from-yellow-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold uppercase">
                 {streamerAvatar ? (
                   <img src={streamerAvatar} alt="Streamer Profile Logo" className="w-full h-full object-cover" />
