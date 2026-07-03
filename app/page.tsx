@@ -1,108 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/navigation';
-
-// ==========================================
-// LEGAL & SUPPORT CONTENT COMPONENTS
-// ==========================================
-const PrivacyPolicy = () => (
-  <div className="text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed">
-    <p><strong>Last Updated: September 13, 2024</strong></p>
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">Introduction</h3>
-    <p>Thank you for choosing to be part of our community at Big Brains LLC (“Company”, “Big Brain”, “we”, “us”, “our”). Big Brain takes seriously its commitment to safeguarding your privacy. This Privacy Policy describes:</p>
-    <ul className="list-disc pl-5 space-y-2">
-      <li>The types of information we may collect or that you may provide when you purchase, download, install, register with, access, or use any product or service that Big Brain offers, including our mobile application Parallel Live: Experience Fame (“Parallel Live”, the “App”) (collectively, the “Services” which includes the App).</li>
-      <li>Our practices for collecting, using, maintaining, protecting, and disclosing that information.</li>
-    </ul>
-    <p>This policy applies only to information we collect through our Services, and any related sales, marketing or events. Our websites and applications other than Parallel Live, and these other third parties, may have their own or additional privacy policies, which we encourage you to read before providing information on or through them.</p>
-    <p>Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, do not download, register with, or use our Services. By downloading, registering with, or using our Services, you agree to this privacy policy. This policy may change from time to time.</p>
-    <p>By visiting or using any product or service that Big Brain offers, including our App, you agree to be bound by the terms of this Privacy Policy and our Terms of Service. If you have any questions or concerns about this privacy policy, or our practices with regard to your personal information, please contact us at privacy@bigbraintech.ai.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">Children’s Privacy</h3>
-    <p>The Big Brain Services are not available to persons under the age of 13. The Big Brain Services are not available to persons under the age of 16 who are located in the European Union, European Economic Area, Switzerland, Israel, Brazil, or Argentina. The Big Brain Services are not available to persons under the age of 18 who reside in California or Maryland or who are located in the United Kingdom. We do not knowingly collect personal information from children who do not meet these thresholds. If we learn we have collected or received personal information from a child who does not meet these thresholds without verification of parental consent, we will delete that information.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">Information We Collect and How We Collect It</h3>
-    <p>We collect information from and about users of our Services:</p>
-    <ul className="list-disc pl-5 space-y-2">
-      <li>Directly from you when you provide it to us.</li>
-      <li>Automatically when you use our Services.</li>
-    </ul>
-
-    <h4 className="text-lg font-bold text-white mt-4">Information you Provide to Us</h4>
-    <p>When you download, register with, or use our Services, we may ask you provide information that identifies, is linked, or is reasonably linkable to you, your household, or any other natural person, which we refer to as “personal information.” The personal information we collect includes:</p>
-    <ul className="list-disc pl-5 space-y-2">
-      <li>Information that you provide by filling in forms regarding our Services. This includes information provided at the time of registering to use our Services, subscribing to our Services, and using our Services.</li>
-      <li>Records and copies of your correspondence (including email addresses and phone numbers), if you contact us.</li>
-      <li>Details of transactions you carry out through our Services and of the fulfillment of your orders. You may be required to provide financial information before placing an order through our Services.</li>
-    </ul>
-
-    <h4 className="text-lg font-bold text-white mt-4">Information We Collect Through Automatic Data Collection Technologies</h4>
-    <p>When you download, access, and use the App, it may use technology to automatically collect the following types of personal information: Usage Details, Device Information, Stored Information and Files, and Precise location Information.</p>
-    
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">Contact Information</h3>
-    <p>To ask questions or comment about this privacy policy and our privacy practices, contact us at: privacy@bigbraintech.ai or by post to:</p>
-    <p className="pl-4 border-l-2 border-purple-500 mt-2">
-      Big Brains LLC<br/>
-      390 NE 191st St<br/>
-      STE 8256<br/>
-      Miami, FL 33179
-    </p>
-  </div>
-);
-
-const TermsOfService = () => (
-  <div className="text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed">
-    <p><strong>Last Updated: September 11, 2024</strong></p>
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">1. Introduction; Your Agreement to these Terms of Service</h3>
-    <p>PLEASE READ THESE TERMS OF SERVICE CAREFULLY. THIS IS A BINDING CONTRACT. Welcome to the services operated by Big Brains LLC (“Company”, “Big Brain”, “we”, “us”, “our”) consisting of the mobile application Parallel Live: Experience Fame (“Parallel Live”, the “App”), our software applications, and any other products or services offered by Big Brain (collectively, the “Big Brain Services” or “Services”).</p>
-    <p>The Terms of Service apply whether you are a user that registers an account with Big Brain Services or an unregistered user. You agree that by installing the App or otherwise registering, downloading, accessing, or using Big Brain Services, you are entering into a legally binding agreement between you and Big Brain.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">2. Use of Big Brain Services by Minors and Blocked Persons</h3>
-    <p>The Big Brain Services are not available to persons under the age of 13. The Big Brain Services are not available to persons under the age of 16 who are located in the European Union, European Economic Area, Switzerland, Israel, Brazil, or Argentina. The Big Brain Services are not available to persons under the age of 18 who reside in California or Maryland or who are located in the United Kingdom.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">6. License</h3>
-    <p>The Big Brain Services are owned and operated by Big Brains LLC. Unless otherwise indicated, all content, information, and other materials on the Big Brain Services (excluding User Content) are protected by relevant intellectual property and proprietary rights and laws. All Materials are the property of Big Brain or its subsidiaries or affiliated companies and/or third-party licensors.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">7. User Content</h3>
-    <p>Big Brain allows you to (a) simulate live streaming audio and visual content while engaging with AI-generated simulated viewers in real-time through features such as likes, comments, and messages; and (b) record the same (collectively “User Content”). You are solely responsible for your User Content and the consequences of posting or publishing it.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">8. Prohibited Conduct</h3>
-    <p>YOU AGREE NOT TO violate any law, contract, intellectual property, or other third-party right; not to commit a tort; and that you are solely responsible for your conduct while using Big Brain Services. You agree that you will comply with these Terms of Service and will not create, upload, transmit, distribute, or store any content that is inaccurate, unlawful, infringing, defamatory, obscene, pornographic, invasive of privacy or publicity rights, harassing, threatening, abusive, inflammatory, or otherwise objectionable.</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">11. Sales & Subscriptions</h3>
-    <p>To make a purchase on the Big Brain Services, you must comply with these Terms of Service. You acknowledge that you are responsible for maintaining the security of, and restricting access to, your computer and personal device, and you agree to accept responsibility for all purchases and other activities that occur on the Big Brain Services. Big Brain may offer certain Services in connection with the Big Brain Services on a subscription basis (“Subscription Services”).</p>
-
-    <h3 className="text-xl font-bold text-white mt-8 mb-2">13. Contact Information</h3>
-    <p>You can reach us at support@bigbraintech.ai or by mail:</p>
-    <p className="pl-4 border-l-2 border-purple-500 mt-2">
-      Big Brains LLC<br/>
-      390 NE 191st St<br/>
-      STE 8256<br/>
-      Miami, FL 33179
-    </p>
-  </div>
-);
-
-const ContactSupport = () => (
-  <div className="text-slate-300 text-sm sm:text-base space-y-6 leading-relaxed flex flex-col items-center justify-center py-10">
-    <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-4">
-      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-    </div>
-    <h3 className="text-2xl sm:text-3xl font-bold text-white text-center">We're here to help!</h3>
-    <p className="text-center max-w-md">If you are experiencing issues with the simulator, have billing questions, or just want to provide feedback, please reach out to our support team directly via email.</p>
-    
-    <div className="bg-[#1b1c30] border border-white/10 rounded-2xl p-6 sm:p-8 mt-6 w-full max-w-md text-center shadow-2xl">
-      <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-2">Contact via email</p>
-      <a href="mailto:wowlive26@yahoo.com" className="text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 hover:opacity-80 transition-opacity break-all">
-        wowlive26@yahoo.com
-      </a>
-    </div>
-  </div>
-);
+import Link from 'next/link';
 
 export default function LandingPage() {
-  const [activeModal, setActiveModal] = useState<'privacy' | 'terms' | 'contact' | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -119,7 +20,6 @@ export default function LandingPage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none z-0"
         >
-          {/* Highly reliable Pixabay CDN video of a concert/party */}
           <source src="https://cdn.pixabay.com/video/2020/05/25/40156-425126815_large.mp4" type="video/mp4" />
         </video>
 
@@ -136,7 +36,7 @@ export default function LandingPage() {
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/80">
             <a href="#features" className="hover:text-white transition-colors">Features</a>
             <a href="#benefits" className="hover:text-white transition-colors">Benefits</a>
-            <button onClick={() => setActiveModal('contact')} className="hover:text-white transition-colors">Support</button>
+            <Link href="/contact" className="hover:text-white transition-colors">Support</Link>
           </div>
 
           <div className="hidden md:block">
@@ -160,7 +60,7 @@ export default function LandingPage() {
           <div className="absolute top-20 left-4 right-4 bg-[#130f26]/95 backdrop-blur-xl border border-white/10 rounded-2xl p-6 flex flex-col gap-5 z-40 md:hidden shadow-2xl animate-fadeIn">
             <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white/80 hover:text-white">Features</a>
             <a href="#benefits" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-white/80 hover:text-white">Benefits</a>
-            <button onClick={() => { setMobileMenuOpen(false); setActiveModal('contact'); }} className="text-left text-lg font-medium text-white/80 hover:text-white">Support</button>
+            <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-left text-lg font-medium text-white/80 hover:text-white">Support</Link>
             <Link href="/setup" className="bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-center py-4 rounded-xl mt-2 text-lg">
               Get Started
             </Link>
@@ -186,9 +86,9 @@ export default function LandingPage() {
             <Link href="/setup" className="w-full sm:w-auto bg-gradient-to-r from-[#FF6565] to-[#FF4B4B] hover:scale-105 transition-transform text-white font-black text-center text-sm sm:text-base px-10 py-4 rounded-full shadow-xl shadow-red-500/20 tracking-wide uppercase">
               Start Live
             </Link>
-            <button onClick={() => setActiveModal('contact')} className="w-full sm:w-auto border border-white/20 hover:bg-white/5 transition-colors text-white font-bold text-sm sm:text-base px-8 py-4 rounded-full backdrop-blur-md">
+            <Link href="/contact" className="w-full sm:w-auto border border-white/20 hover:bg-white/5 transition-colors text-white text-center font-bold text-sm sm:text-base px-8 py-4 rounded-full backdrop-blur-md">
               Customer Support
-            </button>
+            </Link>
           </div>
         </section>
       </div>
@@ -266,45 +166,16 @@ export default function LandingPage() {
 
           <div className="flex flex-col items-center md:items-start gap-3">
             <h4 className="font-bold text-sm text-slate-200 tracking-wider uppercase mb-2">Support</h4>
-            <button onClick={() => setActiveModal('privacy')} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Privacy Policy</button>
-            <button onClick={() => setActiveModal('terms')} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Terms of Service</button>
-            <button onClick={() => setActiveModal('contact')} className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Contact Support</button>
+            <Link href="/privacy" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Terms of Service</Link>
+            <Link href="/contact" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Contact Support</Link>
           </div>
         </div>
         
         <div className="border-t border-white/5 mt-12 pt-8 text-center text-slate-500 text-xs px-4">
-          © 2026 Big Brains LLC. All rights reserved.
+          © 2026 WowLive. All rights reserved.
         </div>
       </footer>
-
-      {/* FULL-SCREEN LEGAL/SUPPORT PAGES (MODALS) */}
-      {activeModal && (
-        <div className="fixed inset-0 bg-[#080914] z-50 overflow-y-auto animate-fadeIn flex flex-col">
-          {/* Modal Header */}
-          <div className="sticky top-0 w-full bg-[#080914]/90 backdrop-blur-xl border-b border-white/10 px-4 sm:px-8 py-4 flex items-center justify-between z-10">
-            <h2 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-              {activeModal === 'privacy' && 'Privacy Policy'}
-              {activeModal === 'terms' && 'Terms of Service'}
-              {activeModal === 'contact' && 'Customer Support'}
-            </h2>
-            <button 
-              onClick={() => setActiveModal(null)}
-              className="bg-white/10 hover:bg-white/20 text-white rounded-full p-2 transition-colors flex items-center justify-center"
-            >
-              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-
-          {/* Modal Content */}
-          <div className="flex-1 w-full max-w-4xl mx-auto px-4 sm:px-8 py-8 sm:py-12">
-            {activeModal === 'privacy' && <PrivacyPolicy />}
-            {activeModal === 'terms' && <TermsOfService />}
-            {activeModal === 'contact' && <ContactSupport />}
-          </div>
-        </div>
-      )}
     </main>
   );
 }
