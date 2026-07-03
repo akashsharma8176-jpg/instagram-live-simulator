@@ -20,7 +20,8 @@ export default function LandingPage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none z-0"
         >
-          <source src="https://cdn.pixabay.com/video/2020/05/25/40156-425126815_large.mp4" type="video/mp4" />
+          {/* Reliable Mixkit CDN video of a crowd with phones */}
+          <source src="https://assets.mixkit.co/videos/preview/mixkit-party-crowd-with-glowing-smartphones-43285-large.mp4" type="video/mp4" />
         </video>
 
         {/* Deep Purple Glass Overlay (Z-10) to ensure text is always readable */}
@@ -30,7 +31,7 @@ export default function LandingPage() {
         <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between relative z-20">
           <div className="flex items-center gap-2">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded shadow-sm">Live</div>
-            <span className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">Parallel Live</span>
+            <span className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">WowLive</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/80">
@@ -78,7 +79,7 @@ export default function LandingPage() {
             Practice Streaming <br className="hidden sm:inline" /> Like a Pro
           </h1>
           
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl px-2">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed mb-10 max-w-2xl px-2 text-justify">
             Practice speaking with AI fans in a safe, simulated live streaming environment. Perfect for building confidence and storytelling skills—no real social media connections, just pure practice that's completely single-player.
           </p>
           
@@ -96,8 +97,8 @@ export default function LandingPage() {
       {/* WHY CHOOSE SECTION */}
       <section id="benefits" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-20">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">Why Choose Parallel Live?</h2>
-          <p className="text-slate-400 text-sm max-w-md mx-auto px-4">The ultimate platform designed to fine-tune your camera presence and digital voice production.</p>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">Why Choose WowLive?</h2>
+          <p className="text-slate-400 text-sm max-w-md mx-auto px-4 text-justify">The ultimate platform designed to fine-tune your camera presence and digital voice production.</p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-2 sm:px-0">
@@ -114,7 +115,7 @@ export default function LandingPage() {
                 </svg>
               </div>
               <h3 className="text-lg font-bold mb-2">{card.title}</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">{card.desc}</p>
+              <p className="text-slate-400 text-sm leading-relaxed text-justify">{card.desc}</p>
             </div>
           ))}
         </div>
@@ -122,18 +123,19 @@ export default function LandingPage() {
 
       {/* FEATURE SHOWCASE */}
       <section id="features" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 relative z-20 border-t border-white/5">
-        <h2 className="text-3xl sm:text-4xl font-black text-center mb-16">See Parallel Live in Action</h2>
+        <h2 className="text-3xl sm:text-4xl font-black text-center mb-16">See WowLive in Action</h2>
         
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20 lg:mb-24">
           <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
              <div className="w-[280px] sm:w-[320px] h-[580px] sm:h-[650px] bg-black rounded-[45px] p-3 shadow-2xl relative border-4 border-slate-800 shrink-0">
-               <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Streaming Mockup" className="w-full h-full object-cover rounded-[32px]" />
+               {/* Replaced Netflix Image with Realistic AI Avatar Streaming */}
+               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Streaming Avatar Mockup" className="w-full h-full object-cover rounded-[32px]" />
                <div className="absolute top-8 left-6 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">LIVE</div>
              </div>
           </div>
           <div className="w-full lg:w-1/2 text-center lg:text-left px-4 order-1 lg:order-2">
             <h3 className="text-3xl sm:text-4xl font-extrabold mb-4">Improve Story Telling</h3>
-            <p className="text-slate-300 leading-relaxed mb-8 text-sm sm:text-base max-w-lg mx-auto lg:mx-0">
+            <p className="text-slate-300 leading-relaxed mb-8 text-sm sm:text-base max-w-lg mx-auto lg:mx-0 text-justify">
               Practice your storytelling skills with AI audiences that respond naturally to your content. Perfect your narrative techniques in a supportive environment before going live.
             </p>
             <Link href="/setup" className="inline-block bg-gradient-to-r from-purple-600 to-pink-600 font-bold px-8 py-3.5 rounded-full hover:opacity-90 transition-opacity">
@@ -150,9 +152,9 @@ export default function LandingPage() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2 mb-4">
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[9px] uppercase font-black px-2 py-0.5 rounded">Live</div>
-              <span className="text-lg font-bold tracking-tight">Parallel Live</span>
+              <span className="text-lg font-bold tracking-tight">WowLive</span>
             </div>
-            <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
+            <p className="text-slate-400 text-sm max-w-xs leading-relaxed text-justify">
               A single-player app where you practice speaking with AI fans in a safe, simulated streaming environment.
             </p>
           </div>

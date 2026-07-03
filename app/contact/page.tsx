@@ -19,7 +19,7 @@ export default function ContactSupportPage() {
         </div>
         
         <h1 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight">Contact Support</h1>
-        <p className="text-slate-400 text-center max-w-md mb-8">If you are experiencing issues with the simulator, have billing questions, or just want to provide feedback, please reach out to our support team directly via email.</p>
+        <p className="text-slate-400 text-center max-w-md mb-8 text-justify">If you are experiencing issues with the WowLive simulator, have billing questions, or just want to provide feedback, please reach out to our support team directly via email.</p>
         
         <div className="bg-[#121324] border border-white/5 rounded-2xl p-8 sm:p-12 w-full max-w-lg text-center shadow-2xl hover:border-purple-500/30 transition-colors">
           <p className="text-sm uppercase tracking-widest text-slate-500 font-bold mb-3">Contact via email :-</p>
