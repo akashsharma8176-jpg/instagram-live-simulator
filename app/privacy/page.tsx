@@ -11,25 +11,25 @@ export default function PrivacyPolicyPage() {
           </Link>
         </div>
         
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">WOWLIVE PRIVACY POLICY</h1>
+        <h1 className="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">CLAWLIVE PRIVACY POLICY</h1>
         <p className="mb-10 text-slate-500 text-sm font-medium">Last Updated: September 13, 2024</p>
         
         <div className="space-y-8 leading-relaxed">
           <section>
             <h2 className="text-xl font-bold text-white mb-3">Introduction</h2>
-            <p className="mb-4 text-justify">Thank you for choosing to be part of our community at WowLive (“Company”, “we”, “us”, “our”). We take seriously our commitment to safeguarding your privacy. This Privacy Policy describes:</p>
+            <p className="mb-4 text-justify">Thank you for choosing to be part of our community at ClawLive (“Company”, “we”, “us”, “our”). We take seriously our commitment to safeguarding your privacy. This Privacy Policy describes:</p>
             <ul className="list-disc pl-5 space-y-2 mb-4 text-slate-400 text-justify">
-              <li>The types of information we may collect or that you may provide when you purchase, download, install, register with, access, or use any product or service that we offer, including our mobile application WowLive (“WowLive”, the “App”) (collectively, the “Services” which includes the App).</li>
+              <li>The types of information we may collect or that you may provide when you purchase, download, install, register with, access, or use any product or service that we offer, including our application ClawLive (“ClawLive”, the “App”) (collectively, the “Services” which includes the App).</li>
               <li>Our practices for collecting, using, maintaining, protecting, and disclosing that information.</li>
             </ul>
-            <p className="mb-4 text-justify">This policy applies only to information we collect through our Services, and any related sales, marketing or events. Our websites and applications other than WowLive, and these other third parties, may have their own or additional privacy policies, which we encourage you to read before providing information on or through them.</p>
+            <p className="mb-4 text-justify">This policy applies only to information we collect through our Services, and any related sales, marketing or events. Our websites and applications other than ClawLive, and these other third parties, may have their own or additional privacy policies, which we encourage you to read before providing information on or through them.</p>
             <p className="mb-4 text-justify">Please read this policy carefully to understand our policies and practices regarding your information and how we will treat it. If you do not agree with our policies and practices, do not download, register with, or use our Services. By downloading, registering with, or using our Services, you agree to this privacy policy. This policy may change from time to time. Your continued use of our Services after we revise this policy means you accept those changes, so please check the policy periodically for updates.</p>
             <p className="text-justify">By visiting or using any product or service that we offer, including our App, you agree to be bound by the terms of this Privacy Policy and our Terms of Service. If you have any questions or concerns about this privacy policy, or our practices with regard to your personal information, please contact us at wowlive26@yahoo.com.</p>
           </section>
 
           <section>
             <h2 className="text-xl font-bold text-white mb-3">Children’s Privacy</h2>
-            <p className="text-justify">The WowLive Services are not available to persons under the age of 13. The WowLive Services are not available to persons under the age of 16 who are located in the European Union, European Economic Area, Switzerland, Israel, Brazil, or Argentina. The WowLive Services are not available to persons under the age of 18 who reside in California or Maryland or who are located in the United Kingdom. We do not knowingly collect personal information from children who do not meet these thresholds. If we learn we have collected or received personal information from a child who does not meet these thresholds without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child who does not meet these thresholds, please contact us at wowlive26@yahoo.com.</p>
+            <p className="text-justify">The ClawLive Services are not available to persons under the age of 13. The ClawLive Services are not available to persons under the age of 16 who are located in the European Union, European Economic Area, Switzerland, Israel, Brazil, or Argentina. The ClawLive Services are not available to persons under the age of 18 who reside in California or Maryland or who are located in the United Kingdom. We do not knowingly collect personal information from children who do not meet these thresholds. If we learn we have collected or received personal information from a child who does not meet these thresholds without verification of parental consent, we will delete that information. If you believe we might have any information from or about a child who does not meet these thresholds, please contact us at wowlive26@yahoo.com.</p>
           </section>
 
           <section>

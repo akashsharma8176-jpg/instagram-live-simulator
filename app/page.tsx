@@ -20,18 +20,17 @@ export default function LandingPage() {
           playsInline 
           className="absolute inset-0 w-full h-full object-cover scale-105 pointer-events-none z-0"
         >
-          {/* This now points directly to the background.mp4 file in your public folder */}
           <source src="/background.mp4" type="video/mp4" />
         </video>
 
-        {/* Deep Purple Glass Overlay (Z-10) to ensure text is always readable */}
+        {/* Deep Purple Glass Overlay (Z-10) */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#1a1236]/95 via-[#100a26]/85 to-[#070314]/95 z-10" />
 
         {/* NAVIGATION BAR (Z-20) */}
         <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-6 flex items-center justify-between relative z-20">
           <div className="flex items-center gap-2">
             <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[10px] uppercase font-black tracking-widest px-2.5 py-1 rounded shadow-sm">Live</div>
-            <span className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">WowLive</span>
+            <span className="text-lg sm:text-xl font-extrabold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">ClawLive</span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-semibold text-white/80">
@@ -97,7 +96,7 @@ export default function LandingPage() {
       {/* WHY CHOOSE SECTION */}
       <section id="benefits" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-20 sm:py-24 relative z-20">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">Why Choose WowLive?</h2>
+          <h2 className="text-3xl sm:text-4xl font-black tracking-tight mb-3">Why Choose ClawLive?</h2>
           <p className="text-slate-400 text-sm max-w-md mx-auto px-4 text-justify">The ultimate platform designed to fine-tune your camera presence and digital voice production.</p>
         </div>
         
@@ -123,12 +122,11 @@ export default function LandingPage() {
 
       {/* FEATURE SHOWCASE */}
       <section id="features" className="w-full max-w-7xl mx-auto px-4 sm:px-6 py-16 relative z-20 border-t border-white/5">
-        <h2 className="text-3xl sm:text-4xl font-black text-center mb-16">See WowLive in Action</h2>
+        <h2 className="text-3xl sm:text-4xl font-black text-center mb-16">See ClawLive in Action</h2>
         
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 mb-20 lg:mb-24">
           <div className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1">
              <div className="w-[280px] sm:w-[320px] h-[580px] sm:h-[650px] bg-black rounded-[45px] p-3 shadow-2xl relative border-4 border-slate-800 shrink-0">
-               {/* Replaced Netflix Image with Realistic AI Avatar Streaming */}
                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Streaming Avatar Mockup" className="w-full h-full object-cover rounded-[32px]" />
                <div className="absolute top-8 left-6 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded">LIVE</div>
              </div>
@@ -152,7 +150,7 @@ export default function LandingPage() {
           <div className="flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2 mb-4">
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-[9px] uppercase font-black px-2 py-0.5 rounded">Live</div>
-              <span className="text-lg font-bold tracking-tight">WowLive</span>
+              <span className="text-lg font-bold tracking-tight">ClawLive</span>
             </div>
             <p className="text-slate-400 text-sm max-w-xs leading-relaxed text-justify">
               A single-player app where you practice speaking with AI fans in a safe, simulated streaming environment.
@@ -175,7 +173,7 @@ export default function LandingPage() {
         </div>
         
         <div className="border-t border-white/5 mt-12 pt-8 text-center text-slate-500 text-xs px-4">
-          © 2026 WowLive. All rights reserved.
+          © 2026 ClawLive. All rights reserved.
         </div>
       </footer>
     </main>
